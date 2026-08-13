@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suguna S | Python Full-Stack Developer</title>
+  <meta name="description" content="Suguna S — Fresher developer portfolio. Python, FastAPI, SQL, HTML, CSS, JavaScript and React.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b1020;--card:#121a2e;--text:#f5f7ff;--muted:#aab3c7;--accent:#7c5cff;--accent2:#23c9a9;--border:rgba(255,255,255,.09)}
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Arial,sans-serif;background:radial-gradient(circle at top right,#1b1a43 0,#0b1020 38%,#080c17 100%);color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1100px,92%);margin:auto}
+    nav{position:sticky;top:0;z-index:10;background:rgba(8,12,23,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-size:1.35rem;font-weight:800}.logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:25px;font-size:.92rem;color:var(--muted)}
+    .nav-links a:hover{color:white}
+    .hero{min-height:calc(100vh - 72px);display:grid;place-items:center;padding:70px 0}
+    .hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:50px;align-items:center}
+    .eyebrow{color:var(--accent2);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:.82rem}
+    h1{font-size:clamp(2.7rem,7vw,5.2rem);line-height:1.02;margin:15px 0}
+    h1 span{color:var(--accent)}
+    .hero p{font-size:1.08rem;color:var(--muted);max-width:650px}
+    .buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+    .btn{padding:12px 19px;border-radius:10px;border:1px solid var(--border);font-weight:700;display:inline-block}
+    .primary{background:var(--accent);border-color:var(--accent)}.primary:hover{filter:brightness(1.12)}
+    .secondary:hover{background:rgba(255,255,255,.07)}
+    .profile-card{background:linear-gradient(145deg,rgba(124,92,255,.2),rgba(35,201,169,.08));border:1px solid var(--border);padding:30px;border-radius:24px;box-shadow:0 25px 70px rgba(0,0,0,.25)}
+    .avatar{width:125px;height:125px;border-radius:50%;display:grid;place-items:center;margin:auto;background:linear-gradient(135deg,var(--accent),var(--accent2));font-size:2.8rem;font-weight:800}.profile-photo{object-fit:cover;object-position:center top;border:3px solid rgba(255,255,255,.18);box-shadow:0 12px 30px rgba(0,0,0,.25)}
+    .profile-card h3{text-align:center;margin-bottom:4px}.profile-card p{text-align:center;color:var(--muted)}
+    .quick{display:grid;gap:10px;margin-top:20px}.quick div{padding:10px 12px;border:1px solid var(--border);border-radius:9px;color:var(--muted);font-size:.9rem}
+    section{padding:90px 0}.section-title{font-size:2.2rem;margin:0 0 10px}.section-sub{color:var(--muted);margin-bottom:35px}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    .card{background:rgba(18,26,46,.72);border:1px solid var(--border);border-radius:18px;padding:26px}
+    .card h3{margin-top:0}.muted{color:var(--muted)}
+    .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .skill-card{padding:22px;border:1px solid var(--border);background:rgba(18,26,46,.6);border-radius:15px}
+    .skill-card h3{margin-top:0;color:#fff}.tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:.82rem;padding:6px 9px;background:rgba(124,92,255,.13);border:1px solid rgba(124,92,255,.25);border-radius:999px;color:#d9d3ff}
+    .project{display:grid;grid-template-columns:1fr 2fr;gap:25px;align-items:stretch}
+    .project-banner{border-radius:18px;background:linear-gradient(135deg,#211b55,#0e5a51);min-height:260px;display:grid;place-items:center;font-size:3rem;font-weight:800;border:1px solid var(--border)}
+    .project h3{font-size:1.6rem;margin-top:0}.project ul{padding-left:20px;color:var(--muted)}
+    .timeline{border-left:2px solid var(--accent);padding-left:25px}.timeline-item{margin-bottom:28px}
+    .timeline-item h3{margin:0}.timeline-item p{margin:4px 0;color:var(--muted)}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    .contact-item{padding:15px 0;border-bottom:1px solid var(--border)}
+    footer{text-align:center;padding:30px;color:var(--muted);border-top:1px solid var(--border)}
+    @media(max-width:800px){.hero-grid,.about,.project,.contact{grid-template-columns:1fr}.skills{grid-template-columns:1fr 1fr}.nav-links{display:none}.hero{padding-top:45px}}
+    @media(max-width:500px){.skills{grid-template-columns:1fr}section{padding:65px 0}.buttons .btn{width:100%;text-align:center}}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#home">Suguna</a>
+    <div class="nav-links">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Fresher Developer</div>
+      <h1>Hi, I'm <span>Suguna S</span>.</h1>
+      <p>Enthusiastic and motivated fresher seeking an entry-level developer opportunity to apply academic knowledge, develop practical skills, contribute positively, and grow professionally.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#projects">View My Project</a>
+        <a class="btn secondary" href="mailto:msmanisuguna@gmail.com">Contact Me</a>
+        <a class="btn secondary" href="Suguna.S_Resume.pdf" download>Download Resume</a>
+      </div>
+    </div>
+    <div class="profile-card">
+      <img class="avatar profile-photo" src="./image_1/profile.jpeg" alt="Suguna S profile photo">
+      <h3>Suguna S</h3>
+      <p>Python / Full-Stack Developer</p>
+      <div class="quick">
+        <div>📍 Pennadam, Tamil Nadu</div>
+        <div>📧 msmanisuguna@gmail.com</div>
+        <div>📱 8940320084</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-sub">A quick introduction based on my resume.</p>
+    <div class="about">
+      <div class="card">
+        <h3>Career Objective</h3>
+        <p class="muted">Enthusiastic and motivated fresher seeking an entry-level opportunity to apply my academic knowledge, develop practical skills, and contribute positively to the organization while growing professionally.</p>
+      </div>
+      <div class="card">
+        <h3>Strengths</h3>
+        <div class="tags">
+          <span class="tag">Quick Learner</span><span class="tag">Hardworking</span><span class="tag">Adaptable</span><span class="tag">Positive Attitude</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+    <p class="section-sub">Technologies and professional skills listed in my resume.</p>
+    <div class="skills">
+      <div class="skill-card"><h3>Frontend</h3><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Bootstrap</span><span class="tag">React JS</span></div></div>
+      <div class="skill-card"><h3>Backend</h3><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span></div></div>
+      <div class="skill-card"><h3>Packages & Libraries</h3><div class="tags"><span class="tag">Pandas</span><span class="tag">NumPy</span></div></div>
+      <div class="skill-card"><h3>Database</h3><div class="tags"><span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">SQLite</span></div></div>
+      <div class="skill-card"><h3>Tools</h3><div class="tags"><span class="tag">VS Code</span><span class="tag">Swagger UI</span></div></div>
+      <div class="skill-card"><h3>Soft Skills</h3><div class="tags"><span class="tag">Communication</span><span class="tag">Teamwork</span><span class="tag">Time Management</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Project</h2>
+    <p class="section-sub">A practical backend project from my resume.</p>
+    <div class="project card">
+      <div class="project-banner">API</div>
+      <div>
+        <h3>To-Do Management REST API</h3>
+        <p><strong>Python · FastAPI · SQLite</strong></p>
+        <ul>
+          <li>Developed a REST API for task management with complete CRUD functionality.</li>
+          <li>Implemented data validation using Pydantic.</li>
+          <li>Implemented database operations using SQLite.</li>
+          <li>Tested and documented API endpoints using Swagger UI.</li>
+        </ul>
+        <div class="tags"><span class="tag">REST API</span><span class="tag">CRUD</span><span class="tag">Pydantic</span><span class="tag">SQLite</span><span class="tag">Swagger UI</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <h2 class="section-title">Education</h2>
+    <p class="section-sub">Academic background.</p>
+    <div class="timeline">
+      <div class="timeline-item"><h3>Bachelor of Degree – Electronics and Communication Engineering</h3><p>Trichy Engineering College / Anna University · 2022–2026 · CGPA: 7.8</p></div>
+      <div class="timeline-item"><h3>12th Standard</h3><p>Government Girls Higher Secondary School, Pennadam · 2020–2022 · 61%</p></div>
+      <div class="timeline-item"><h3>10th Standard</h3><p>Government Girls Higher Secondary School, Pennadam · 2019–2020 · 61%</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Let's Connect</h2>
+    <p class="section-sub">I'm looking for an entry-level developer opportunity where I can learn, contribute, and grow.</p>
+    <div class="contact">
+      <div class="card">
+        <div class="contact-item"><strong>Email</strong><br><a class="muted" href="mailto:msmanisuguna@gmail.com">msmanisuguna@gmail.com</a></div>
+        <div class="contact-item"><strong>Phone</strong><br><span class="muted">8940320084</span></div>
+        <div class="contact-item"><strong>Location</strong><br><span class="muted">Pennadam, Tamil Nadu</span></div>
+      </div>
+      <div class="card">
+        <h3>Languages</h3>
+        <div class="tags"><span class="tag">English</span><span class="tag">Tamil</span></div>
+        <div class="buttons"><a class="btn primary" href="mailto:msmanisuguna@gmail.com">Email Me</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 Suguna S · Fresher Developer Portfolio</footer>
+</body>
+</html>
